@@ -3,13 +3,13 @@ from datetime import datetime, timedelta
 import pytz
 
 # OpenWeatherMap API-Konfiguration
-API_KEY = 'c612438a64c0fe7aa0de7472326891a1'  # Ersetze mit deinem API-Schlüssel
+API_KEY = ${{ secrets.OPEN_WEATHER_API }}  # Ersetze mit deinem API-Schlüssel
 LOCATION = 'Berlin,de'                  # Stadt und Land
 UNITS = 'metric'                        # Metrische Einheiten (°C)
 WEATHER_URL = f'http://api.openweathermap.org/data/2.5/forecast?q={LOCATION}&appid={API_KEY}&units={UNITS}'
 
 # Pushbullet API-Konfiguration
-PUSHBULLET_API_TOKEN = 'o.w7A73dZfWP1wwQFXojhAn2ug8zFalppP'  # Ersetze mit deinem API-Token
+PUSHBULLET_API_TOKEN = ${{ secrets.PUSHBULLET_API_KEY }}  # Ersetze mit deinem API-Token
 PUSHBULLET_URL = 'https://api.pushbullet.com/v2/pushes'
 
 def get_weather_forecast():
