@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.coldnightcheck</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/selbo/Documents/CheckColdNight/venv/bin/python</string>
+        <string>/Users/selbo/Library/LaunchAgents/check_cold_night.py</string>
+    </array>
+    <key>StartInterval</key>
+    <integer>60</integer>
+    <key>RunAtLoad</key>
+    <true/>
+</dict>
+</plist>
