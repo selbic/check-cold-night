@@ -23,6 +23,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Check if API key is set
+      run: |
+        echo "API Key is set: ${{ secrets.OPEN_WEATHER_API }}"
+
+
     - name: Run the script
       env:
           OPEN_WEATHER_API: ${{ secrets.OPEN_WEATHER_API }}  # Injecting the secret as an environment variable
