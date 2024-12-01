@@ -2,7 +2,7 @@ name: Cold Night Checker
 
 on:
   schedule:
-    - cron: "0 10 * * *" # Jeden Tag um 10:00 Uhr UTC
+    - cron: "0 9 * * *" # Jeden Tag um 10:00 Uhr MESZ (Winterzeit)
   workflow_dispatch: # Ermöglicht manuelles Ausführen
 
 jobs:
