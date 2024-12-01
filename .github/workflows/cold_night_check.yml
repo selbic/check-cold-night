@@ -24,5 +24,8 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run the script
+      env:
+          OPEN_WEATHER_API: ${{ secrets.OPEN_WEATHER_API }}  # Injecting the secret as an environment variable
+          PUSHBULLET_API_KEY: ${{ secrets.PUSHBULLET_API_KEY }}  # Injecting the secret as an environment variable
       run: |
         python check_cold_night.py
