@@ -5,6 +5,10 @@ import pytz
 
 # OpenWeatherMap API-Konfiguration
 API_KEY = os.getenv('OPEN_WEATHER_API')  # The environment variable that holds the API key
+if not API_KEY:
+    print("API key not set.")
+    exit(1)
+    
 LOCATION = 'Berlin,de'                  # Stadt und Land
 UNITS = 'metric'                        # Metrische Einheiten (°C)
 WEATHER_URL = f'http://api.openweathermap.org/data/2.5/forecast?q={LOCATION}&appid={API_KEY}&units={UNITS}'
