@@ -1,6 +1,6 @@
 # Check Cold Night
 
-This project checks the weather forecast and sends a notification if a cold night is predicted. It uses GitHub Actions to automate this process daily. The underlying reason is that I need to put the plants into the garage once a temperature below -4 degrees Celsius is expected. If this works, I would receive a warning the preceding day at 10am based on Open Weather forecasts. 
+This project checks the weather forecast and sends a notification if a cold night is predicted. It uses GitHub Actions to automate this process daily. The underlying reason is that I need to put the plants into the garage once a temperature below -4 degrees Celsius is expected. If this works, I would receive a warning on my Android phone the preceding day at 10am based on Open Weather forecasts. 
 
 ## How It Works
 
