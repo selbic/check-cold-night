@@ -1,0 +1,15 @@
+# Python
+*.pyc
+__pycache__/
+venv/
+
+# macOS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+
+# Test/coverage reports
+.coverage
+nosetests.xml
