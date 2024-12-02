@@ -1,11 +1,11 @@
 # Check Cold Night
 
-This project checks the weather forecast and sends a notification if a cold night is predicted. It uses GitHub Actions to automate this process daily. The underlying reason is that I need to put the plants into the garage once a temperature below -4 degrees Celsius is expected. If this works, I would receive a warning on my Android phone the preceding day at 10am based on Open Weather forecasts. 
+This project checks the weather forecast and sends a notification if a cold night is predicted. It uses GitHub Actions to automate this process daily. The underlying reason is that I need to put the plants into the garage once a temperature below -4 degrees Celsius is expected. If this works, I would receive a warning on my Android phone the preceding day at 10am UTC based on Open Weather forecasts. 
 
 ## How It Works
 
 1. **Scheduled Workflow**:  
-   The workflow is set to run **daily at 9:00 AM UTC**. It triggers a Python script that checks the weather using the OpenWeather API.
+   The workflow is set to run **daily at 10:00 AM UTC**. It triggers a Python script that checks the weather using the OpenWeather API.
 
 2. **Secrets Management**:  
    API keys for OpenWeather and Pushbullet are stored securely as GitHub Secrets, ensuring sensitive information is kept safe.
