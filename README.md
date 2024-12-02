@@ -35,12 +35,19 @@ This setup ensures you’re notified about cold weather without any manual check
    ```bash
    git clone https://github.com/yourusername/check-cold-night.git
 
-2. Install the required dependencies:
-   ```bash   
-   pip install -r requirements.txt
+2. Push to your GitHub:
+   After cloning, push it to your own GitHub repository:
 
-3. Create a .env file and add your API keys:
    ```bash
-    makefile
-    OPEN_WEATHER_API=your_open_weather_api_key
-    PUSHBULLET_API_KEY=your_pushbullet_api_key
+   cd check-cold-night
+   git remote set-url origin https://github.com/yourusername/check-cold-night.git
+   git push -u origin main
+
+3. Set up GitHub Secrets:
+   In your GitHub repository, go to Settings > Secrets and variables > Actions and add the following secrets:
+
+   OPEN_WEATHER_API: Your OpenWeather API key.
+   PUSHBULLET_API_KEY: Your Pushbullet API key.
+
+4. Adjust Cron Schedule (optional):
+   You can adjust the cron schedule in the .github/workflows/weather-check.yml file if you want the script to run at a different time.
