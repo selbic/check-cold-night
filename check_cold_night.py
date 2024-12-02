@@ -8,6 +8,7 @@ API_KEY = os.getenv('OPEN_WEATHER_API').strip()  # The environment variable that
 LOCATION = 'Berlin,de'                  # Stadt und Land
 UNITS = 'metric'                        # Metrische Einheiten (°C)
 WEATHER_URL = f'http://api.openweathermap.org/data/2.5/forecast?q={LOCATION}&appid={API_KEY}&units={UNITS}'
+THRESHOLD = 100 #under this temperature a message gets send
 
 # Pushbullet API-Konfiguration
 PUSHBULLET_API_TOKEN = os.getenv('PUSHBULLET_API_KEY') # Ersetze mit deinem API-Token
@@ -34,7 +35,7 @@ def send_push_notification(title, message):
     response.raise_for_status()
 
 def check_for_cold_night():
-    """Überprüft die Wettervorhersage auf Temperaturen unter -5°C in der kommenden Nacht."""
+    """Überprüft die Wettervorhersage auf Temperaturen unter THRESHOLD °C in der kommenden Nacht."""
     forecast = get_weather_forecast()
     timezone = pytz.timezone('Europe/Berlin')  # Zeitzone für Deutschland
     current_time = datetime.now(timezone)
@@ -44,7 +45,7 @@ def check_for_cold_night():
         forecast_time = datetime.fromtimestamp(item['dt'], tz=timezone)
         if next_night_start <= forecast_time < next_night_start + timedelta(hours=6):  # Nachtstunden (00:00 - 06:00)
             temp = item['main']['temp']
-            if temp < 100:
+            if temp < THRESHOLD:
                 send_push_notification(
                     title="Kalte Nachtwarnung!",
                     message=f"In der kommenden Nacht wird es {temp}°C kalt. Bring die Pflanzen rein!"
