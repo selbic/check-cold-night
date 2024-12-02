@@ -4,10 +4,11 @@ from datetime import datetime, timedelta
 import pytz
 
 # OpenWeatherMap API-Konfiguration
-API_KEY = os.getenv('OPEN_WEATHER_API')  # The environment variable that holds the API key
-if not API_KEY:
-    print("API key not set.")
-    exit(1)
+API_KEY = os.getenv('OPEN_WEATHER_API').strip()  # The environment variable that holds the API key
+if API_KEY is None:
+    print("API Key not found!")
+else:
+    print("API Key found!")
     
 LOCATION = 'Berlin,de'                  # Stadt und Land
 UNITS = 'metric'                        # Metrische Einheiten (°C)
