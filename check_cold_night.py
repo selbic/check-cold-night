@@ -8,7 +8,7 @@ API_KEY = os.getenv('OPEN_WEATHER_API').strip()  # The environment variable that
 LOCATION = 'Berlin,de'                  # Stadt und Land
 UNITS = 'metric'                        # Metrische Einheiten (°C)
 WEATHER_URL = f'http://api.openweathermap.org/data/2.5/forecast?q={LOCATION}&appid={API_KEY}&units={UNITS}'
-THRESHOLD = 100 #under this temperature a message gets send
+THRESHOLD = -4 #under this temperature a message gets send
 
 # Pushbullet API-Konfiguration
 PUSHBULLET_API_TOKEN = os.getenv('PUSHBULLET_API_KEY') # Ersetze mit deinem API-Token
