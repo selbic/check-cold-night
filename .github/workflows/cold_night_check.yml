@@ -2,14 +2,17 @@ name: Cold Night Checker
 
 on:
   schedule:
-    - cron: "0 9 * * *" # Jeden Tag um 10:00 Uhr MESZ (Winterzeit)
+    - cron: "0 10 * * *" # Jeden Tag um 10:00 Uhr MESZ (Winterzeit)
   workflow_dispatch: # Ermöglicht manuelles Ausführen
 
 jobs:
   check-cold-night:
     runs-on: ubuntu-latest
-
+    
     steps:
+    - name: Print timestamp
+      run: date --utc
+        
     - name: Checkout Repository
       uses: actions/checkout@v3
 
