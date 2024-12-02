@@ -45,7 +45,7 @@ This setup ensures you’re notified about cold weather without any manual check
 
 3. Set up GitHub Secrets:
    In your GitHub repository, go to Settings > Secrets and variables > Actions and add the following secrets:
-
+   ```bash
    OPEN_WEATHER_API: Your OpenWeather API key.
    PUSHBULLET_API_KEY: Your Pushbullet API key.
 
